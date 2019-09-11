@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Logistics Calculator - Disciples of Progress</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Logistics Calculator - Trip Plan</h1>
+            <div class="calculator">
+                <form id="calculatorInput" onsubmit="return false;">
+                    <h2>Trip parameters</h2>
+                    <div class="inputContainer">
+                        <label>Start System</label>
+                        <input id="startSystem" class="systemInput" type="text" required="true"/>
+                        <span id="startSystemError" class="error"></span>
+                    </div>
+                    <div class="inputContainer">
+                        <label>Destination</label>
+                        <input id="destSystem" class="systemInput" type="text" required="true"/>
+                        <span id="destSystemError" class="error"></span>
+                    </div>
+                    <div class="inputContainer">
+                        <label>Collateral (ISK)</label>
+                        <input id="collateral" type="number" required="true"/>
+                        <span id="collateralError" class="error"></span>
+                    </div>
+                    <div class="inputContainer">
+                        <label>Volume (m3)</label>
+                        <input id="volume" type="number" required="true"/>
+                        <span id="volumeError" class="error"></span>
+                    </div>
+                    <div>
+                        <button type="submit">
+                            Calculate
+                            <i class="fas fa-angle-right"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="calculatorOutput">
+                    <h2>Expected reward</h2>
+                    <p>
+                        <input id="rewardInput" type="text" readonly="true"/>
+                        (<span id="rewardText">0</span> Million ISK)
+                    </p>
+                    <p>(<span id="jumpsText">0</span> jumps)</p>
+                </div>
+            </div>
+    
+            <h1>How to set up the contract</h1>
+            <p>Contract Type: <b>Courier</b></p>
+            <p>Availability: <b>Private</b> to <b>Disciples of Progress</b></p>
+            <p>Expiration: <b>7 days</b></p>
+            <p>Complete in: <b>3 days</b></p>
+            <p>
+                <b>Note:</b>
+                Disciples of Progress Logistics only provides service to NPC stations and selected outposts/citadels under agreement,
+                <b>the calculator does not verify if the system you searched has an NPC station.</b>
+            </p>
+            <p>
+                Questions? Join channel <a href="https://discord.gg/xRFEDUR"><i class="fab fa-discord"></i> Disciples of Progress</a>
+            </p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js" integrity="sha256-xI/qyl9vpwWFOXz7+x/9WkG5j/SVnSw21viy8fWwbeE=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/443afdc217.js"></script>
+        <script src="systems.js"></script>
+        <script src="calculator.js"></script>
+    </body>
+</html>

@@ -25,7 +25,10 @@ function calculateDistance(start, dest) {
 }
 
 function calculateReward(distance, collateral, volume) {
-    return collateral + (distance * collateral / volume);
+    var preciseReward = collateral + (distance * collateral / volume);
+    // Round up to nearest 0.01 million (10,000)
+    var roundedUp = Math.ceil(preciseReward / 10000) * 10000;
+    return roundedUp;
 }
 
 $(document).ready(function() {

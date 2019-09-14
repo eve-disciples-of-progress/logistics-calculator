@@ -16,6 +16,7 @@ relevantSolarSystems.forEach((solarSystem) => {
 });
 
 var fileContent = `
+// This file is machine-generated via [\`transform.js\`](https://github.com/eve-disciples-of-progress/logistics-calculator/blob/master/transform.js) - do not edit directly!
 var eveSystems = ${JSON.stringify(formattedSystems)};
 var eveSystemNames = Object.keys(eveSystems);
 `;

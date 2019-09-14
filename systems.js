@@ -1,7 +1,22 @@
 var eveSystems = {
-    "jita": ["test1"],
-    "test1": ["test2"],
-    "test2": ["test3"]
+    "akeva": ["gelhan"],
+    "gelhan": ["ejahi"],
+    "ejahi": ["jarizza"],
+    "jarizza": ["bar", "asghatil"],
+    "bar": ["sucha", "gamis"],
+    "asghatil": ["akpivem", "sucha"],
+    "gamis": ["shedoo"],
+    "akpivem": ["tanoo", "yuzier", "maspah"],
+    "shedoo": ["ihal", "berta"],
+    "tanoo": ["sasta", "yuzier"],
+    "yuzier": ["nirbhi"],
+    "maspah": ["shala", "zemalu", "ibaria", "juddi"],
+    "berta": ["juddi"],
+    "shala": ["zemalu"],
+    "juddi": ["ibaria", "khankenird"],
+    "nirbhi": ["tidacha", "zaid"], //
+    "tanoo": ["sasta"], //
+
 };
 
 // Convert keys to lower case

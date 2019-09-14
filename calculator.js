@@ -67,6 +67,10 @@ function calculateReward(distance, shipType) {
     return roundedUp;
 }
 
+function capitalizeStringStart(str) {
+    return str && str[0].toUpperCase() + str.slice(1);
+}
+
 $(document).ready(function() {
     $(".systemInput").autocomplete({
         source: eveSystemNames
@@ -108,6 +112,12 @@ $(document).ready(function() {
         if (errors > 0) {
             return;
         }
+
+        var gateCheckUrl = `https://eve-gatecheck.space/eve/#${capitalizeStringStart(startSystem)}:${capitalizeStringStart(destSystem)}:secure`;
+        var gateCheckLink = document.getElementById('gateCheckLink');
+        gateCheckLink.href = gateCheckUrl;
+        var gateCheckContainer = document.getElementById('gateCheckContainer');
+        gateCheckContainer.style.display = 'block';
 
         var distance = calculateDistance(startSystem, destSystem);
         $('#jumpsText').text(distance);

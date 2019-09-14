@@ -1,26 +1,25 @@
 function calculateDistance(start, dest) {
     // We're doing breadth-first-search
-    // TODO: This is bugged - figures out a path that revisits visited nodes
-
-    var path = [];
-    var visited = [];
-    var queue = [];
-    queue.unshift(start);
+    var breadthFirstTree = {}; // value = parent of vertex
+    var visited = [start];
+    var queue = [start];
     while (queue.length > 0) {
         var queueBeginning = queue.shift();
-        path.push(queueBeginning);
         eveSystems[queueBeginning]
             .filter(function(system) {
                 return !visited.includes(system)
             })
             .forEach(function(system) {
                 visited.push(system);
-                queue.unshift(system);
+                queue.push(system);
+                breadthFirstTree[system] = queueBeginning;
             });
     }
 
-    console.log('Path', path);
-    console.log('Path length', path.length);
+    var path = [];
+    for (var currentSystem = dest; currentSystem !== start; currentSystem = breadthFirstTree[currentSystem]) {
+        path.unshift(currentSystem);
+    }
     return path.length;
 }
 

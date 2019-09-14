@@ -4,7 +4,7 @@ const solarSystems = rawData.solarSystems;
 const jumps = rawData.jumps;
 
 // We don't do hauling through low & null sec systems, so lets filter them out
-const relevantSolarSystems = solarSystems.filter((solarSystem) => Math.round(solarSystem.security) >= 0.5);
+const relevantSolarSystems = solarSystems.filter((solarSystem) => (Math.round(solarSystem.security * 10) / 10) >= 0.5);
 
 const formattedSystems = {};
 relevantSolarSystems.forEach((solarSystem) => {
